@@ -14,7 +14,7 @@ server.on('connection', socket => {
         if (client !== socket && client.readyState === webSocket.OPEN) {
             client.send("¡Un nuevo usuario se ha unido al chat!");
         }
-    });
+    }); //avisa de que un nuevo cliente ingreso al chat
 
     socket.on('message', message => { //recibe el mensaje del cliente
         server.clients.forEach(client=>{ //revisa si el cliente sigue conectado
