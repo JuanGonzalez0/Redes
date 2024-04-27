@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+<body>
+    Nombre :<input type="text" id="name">
+    Mensaje :<input type="text" id="message">
+    <button onclick="sendmessage()">Enviar</button> <!-- invoca la funcion sendmessege para enviar el mensaje y el nombre -->
+    <div id="chatbox"></div>
+</body>
+<script>
+    const socket = new WebSocket('ws://localhost:8080') //se crea un websocket para conectarse al servidor
+    
+    socket.onmessage = ({data}) => {
+        document.getElementById('chatbox').innerHTML += "<br/>"+data //mete los mensajes escritos al div
+        
+    }; 
+
+    const sendmessage = () => {
+        
+        message = document.getElementById('message').value
+        name = document.getElementById('name').value
+        socket.send(name + ': ' + message)
+        document.getElementById('message').value = ''
+    } //envia los mensajes y el nombre Backend y se muestran a todos los clientes
+</script>
+</html>
