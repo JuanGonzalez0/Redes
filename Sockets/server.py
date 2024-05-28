@@ -24,7 +24,6 @@ def main():
     while True:
         client_socket, client_address = server_socket.accept()
         print(f"Conexion desde: {client_address}")
-        client_socket.sendall("Ingrese su nombre: ".encode('utf-8'))
         client_handler = threading.Thread(target=handle_client, args=(client_socket,))
         client_handler.start()
 
