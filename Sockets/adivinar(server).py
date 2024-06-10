@@ -23,31 +23,11 @@ def handle_client(client_socket):
         if(comparar != 0):
 
             if(comparar == numero):
-                mensaje = "Empate"
+                mensaje = "Adivinaste"
                 print(mensaje)
-            elif(comparar == 1 and numero == 2):
-                mensaje = "gana jugador 2"
-                print(mensaje)
-            elif(comparar == 1 and numero == 3):
-                mensaje = "gana jugador 1"
-                print(mensaje)
-            elif(comparar == 2 and numero == 1):
-                mensaje = "gana jugador 1"
-                print(mensaje)
-            elif(comparar == 2 and numero == 3):
-                mensaje = "gano jugador 2"
-                print(mensaje)
-            elif(comparar == 3 and numero == 2):
-                mensaje = "gana jugador 1"
-                print(mensaje)
-            elif(comparar == 3 and numero == 1):
-                mensaje = "gana jugador 2"
-                print(mensaje)
-            
             else:
                 mensaje = "Intente de vuelta"
                 print(mensaje)
-            comparar = 0
         else:
             comparar = numero
 

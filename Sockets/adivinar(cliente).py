@@ -13,11 +13,12 @@ def main():
         
         while True:
             # Solicitamos al usuario ingresar un número
-            numero = input("Su jugada: 1-(piedra) 2-(papel) 3-(tijera) (o 'q' para salir): ")
+            numero = input("Ingrese un número (o 'q' para salir): ")
             
             # Si el usuario ingresa 'q', salimos del bucle
             if numero.lower() == 'q':
                 break
+            
             try:
                 # Convertimos el número a un entero
                 numero_entero = int(numero)
